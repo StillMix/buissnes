@@ -1,140 +1,159 @@
 .loginBody {
-    overflow: hidden;
-    width: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 
 .loginBody__img {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    left: 0;
-    height: 76%;
-    width: 100%;
-    object-fit: cover;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  height: 76%;
+  width: 100%;
+  object-fit: cover;
 }
-
 
 .loginPopup {
-    text-align: left;
-    border-radius: 40px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-    height: 53.8%;
-    width: 54.1%;
-    background: white;
-    position: absolute;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+  padding-bottom: 10px;
+  text-align: left;
+  border-radius: 40px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 54.1%;
+  background: white;
+  position: fixed; /* или absolute, в зависимости от контекста */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
 .loginPopup__img {
-    margin-left: 4%;
-    margin-bottom: 0;
-    width: 13%;
-    height: 5%;
-    margin-top: 8%;
+  margin-left: 4%;
+  margin-bottom: 0;
+  width: 13%;
+  height: 5%;
+  margin-top: 8%;
 }
 
 .loginPopup__container {
-    display: flex;
-    margin-left: 4%;
-    margin-top: 15%;
-    align-items: center;
+  display: flex;
+  margin-left: 4%;
+  margin-top: 15%;
+  align-items: center;
 }
 
 .loginPopup_text_title {
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 3vw;
-    line-height: 3.5vw;
-    margin-top: 0;
-    margin-bottom: 0;
-    white-space: nowrap;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3vw;
+  line-height: 3.5vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .loginPopup_text_subtitle {
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1vw;
-    line-height: 1.5vw;
-    margin-top: 6px;
-    margin-bottom: 0;
-    white-space: nowrap;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1vw;
+  line-height: 1.5vw;
+  margin-top: 6px;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
 .loginPopup__inputs {
-    text-align: right;
-    display: block;
+  text-align: right;
+  display: block;
 }
 
 .input {
-    margin-right: 50px;
-    width: 80%;
-    background: transparent;
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: left;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #D9D9D9;
-    padding: 0 0 15px 0;
-    color: rgba(0, 0, 0, 0.2);
+  margin-right: 50px;
+  width: 80%;
+  background: transparent;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.04166667vw;
+  line-height: 20px;
+  text-align: left;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0 0 1.5% 0;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .loginPopup_inputs_password {
-    margin-top: 50px;
+  margin-top: 15%;
 }
 
 .loginPopup__containerBtn {
-    display: flex;
-    margin-bottom: 8%;
-    margin-left: 4%;
+  display: flex;
+  margin-top: 15%;
+  margin-bottom: 8%;
+  margin-left: 4%;
 }
 
 .loginPopup__btn {
-    margin-right: 50px;
-    Width: 21%;
-    Height: 7%;
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    bottom: 15%;
-    line-height: 20px;
-    text-align: center;
-    background: black;
-    background-repeat: no-repeat;
-    border: none;
-    outline: none;
-    right: 0;
-    cursor: pointer;
-    border-radius: 48px;
-    position: absolute;
-    color: white;
+  display: flex;
+  margin-right: 50px;
+  width: 21%;
+  height: 7%;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.04vw;
+  line-height: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  right: 0;
+  cursor: pointer;
+  border-radius: 48px;
+  position: absolute;
+  color: white;
 }
 
 .loginPopup_btn_img {
-    margin-left: 15px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 7.798%;
+  height: 35.556%;
+  text-align: center;
+  margin-left: 15px;
 }
-
+.loginPopup_btn_image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
 .loginPopup__darkTheme {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 15%;
-    text-align: center;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.88vw;
+  line-height: 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  text-align: center;
 }
 
-.loginPopup_darkTheme_icon{
-    margin-right: 8px;
+.loginPopup_darkTheme_toggle {
+  margin-left: 32px;
+}
+
+.loginPopup_darkTheme_icon {
+  margin-right: 8px;
 }

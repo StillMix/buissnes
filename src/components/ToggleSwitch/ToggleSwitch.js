@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import './ToggleSwitch.css'; // Подключаем стили для переключателя
+import React, { useState } from "react";
+import "./ToggleSwitch.css"; // Подключаем стили для переключателя
 
 const ToggleSwitch = () => {
   const [isChecked, setIsChecked] = useState(false); // Состояние переключателя
 
   const toggleChecked = () => {
-    setIsChecked(prevState => !prevState); // Изменяем состояние переключателя
+    setIsChecked((prevState) => !prevState); // Изменяем состояние переключателя
   };
 
   return (
