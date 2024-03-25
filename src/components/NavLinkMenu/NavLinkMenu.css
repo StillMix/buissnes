@@ -1,0 +1,21 @@
+.NavLinkMenu {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 15.8333%;
+    background-color: black;
+}
+
+.NavLinkMenu_links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.NavLinkMenu__link {
+    border: none;
+    outline: none;
+    font-style: normal;
+    text-decoration: none;
+    color: white;
+}
