@@ -1,0 +1,12 @@
+import React from "react";
+import "./Marked.css";
+
+function Marked() {
+  return (
+    <div className="markedBody">
+      MarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarkedMarked
+    </div>
+  );
+}
+
+export default Marked;
