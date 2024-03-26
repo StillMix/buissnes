@@ -1,10 +1,15 @@
-import React from "react";
-import "./Main.css";
+import React from 'react';
+import './Main.css';
+
+import NavLinkMenu from '../NavLinkMenu/NavLinkMenu';
 
 function Main() {
   return (
-    <div className="MainBody">
-      mainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmain
+    <div className="mainBody">
+      <NavLinkMenu />
+      <div className='main'>
+      mainmainmainmainmainmainmainmainmainmainmainmainmain
+      </div>
     </div>
   );
 }

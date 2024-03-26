@@ -1,10 +1,13 @@
 import React from "react";
 import "./Report.css";
-
+import NavLinkMenu from '../NavLinkMenu/NavLinkMenu';
 function Report() {
   return (
     <div className="ReportBody">
-      ReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReportReport
+      <NavLinkMenu />
+      <div className="report">
+      ReportReportReportReportReportReportReportReportReport
+      </div>
     </div>
   );
 }
