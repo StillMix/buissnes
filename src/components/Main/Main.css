@@ -4,4 +4,110 @@
     right: 0;
     height: 100%;
     text-align: left;
+  }
+  
+  .main__title {
+    margin-top: 1.36%; /* эквивалентно 22px для контейнера шириной 1616px */
+    margin-left: 1.48%; /* эквивалентно 24px для контейнера шириной 1616px */
+    display: flex;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.25rem, 0.2115rem + 1.5385vw, 1.25rem);/* эквивалентно 20px для контейнера шириной 1616px */
+    letter-spacing: -0.01em;
+    color: #000;
 }
+
+.main__title img {
+    width: 1.57%; /* эквивалентно 25.44px для контейнера шириной 1616px */
+    height: 1.85%; /* эквивалентно 31.63px для контейнера шириной 1616px */
+    margin-right: 0.224%; /* эквивалентно 3.62px для контейнера шириной 1616px */
+}
+
+  
+.main__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.8%; /* эквивалентно 28px для контейнера шириной 1616px */
+    width: 99%; /* эквивалентно 1555px для контейнера шириной 1616px */
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.main__containers {
+    border-radius: 10px;
+    width: 49.8%; /* Примерно половина ширины родительского элемента */
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.main__containersTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.25rem, 0.2212rem + 1.1538vw, 1rem);
+    color: #2e2e30;
+    text-align: center;
+    margin-top: 3.27%; /* Примерно 25.36 пикселей при ширине родительского элемента 774 пикселей */
+    margin-bottom: 2.02%; /* Примерно 15.64 пикселей при ширине родительского элемента 774 пикселей */
+}
+  
+  .main__containersTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .main__containersTableContainer {
+    max-height: 70%; /* Примерно 750 пикселей при ширине родительского элемента 774 пикселей */
+    overflow: hidden;
+    margin-left: 2.85%; /* Примерно 22.1 пикселей при ширине родительского элемента 774 пикселей */
+    width: 92.5%; /* Примерно 717 пикселей при ширине родительского элемента 774 пикселей */
+}
+  
+  .main__containersElements {
+    border-bottom: 1px solid #eee;
+  }
+  
+  .main__containersElementsP {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.25rem, 0.226rem + 0.9615vw, 0.875rem);
+    letter-spacing: -0.01em;
+    color: #b5b7c0;
+    padding: 8px;
+    text-align: left;
+  }
+
+th.main__containersElementsP {
+  color: #b5b7c0;
+}
+
+td.main__containersElementsP {
+  color: #000;
+}
+
+.main__containerbtn {
+    margin-top: 15px;
+    height: 10%; /* Примерно 104.98 пикселей при высоте родительского контейнера 1080 пикселей */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main__containerbtnLink {
+  border-radius: 5px;
+  width: 268px;
+  height: 50px;
+  background: #d5e5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.25rem, 0.1404rem + 4.386vw, 0.875rem);
+  color: #344bfd;
+  text-decoration: none;
+}
+
+
