@@ -29,6 +29,7 @@
 }
 
 .NavLinkMenu_linksContainer_title {
+  margin-top: 10px;
   margin-left: 9.87%;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
@@ -39,12 +40,12 @@
 }
 
 .NavLinkMenu_links {
+  margin-top: 13px;
   margin-left: 9.87%;
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-
 
 .NavLinkMenu_link_img {
   margin-right: 4%;
@@ -70,9 +71,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 4.20%;
+  margin-bottom: 4.2%;
 }
-
 
 .NavLinkMenu__link::nth-last-child(2) {
   margin: 0;
@@ -92,7 +92,7 @@
 }
 
 .NavLinkMenu__link.active::before {
-  content: '';
+  content: "";
   /* Обязательное свойство для псевдоэлемента */
   position: absolute;
   top: 50%;
@@ -129,16 +129,18 @@
   display: none;
 }
 
-
 .NavLinkMenu__adminPanelContainer {
   text-align: left;
-  height: 16.48%;
+  height: 25%;
   width: 100%;
   border-bottom: 2px solid #333333;
 }
 
 
+
+
 .NavLinkMenu__adminPanelContainer_title {
+  margin-top: 10px;
   margin-left: 9.87%;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
@@ -164,55 +166,30 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 4.20%;
+  margin-bottom: 4.2%;
 }
 
-
 .NavLinkMenu__settingsContainer {
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
   text-align: left;
   width: 100%;
 }
 
-.NavLinkMenu__settingsContainer_title {
+.NavLinkMenu__settingsContainer_btn {
+  cursor: pointer;
   margin-left: 9.87%;
-  font-family: "Inter", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.04vw;
-  line-height: 1.1vw;
-  color: #333333;
-}
-
-.NavLinkMenu_settingsContainer_darkTheme {
-  font-family: "Inter", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.88vw;
-  line-height: 20px;
-  margin: 0;
+  height: 30px;
   display: flex;
   align-items: center;
-  position: absolute;
-  text-align: center;
-  color: white;
-  margin-left: 9.87%;
+  font-weight: 500;
+  background: transparent;
+  font-size: 0.8854vw;
+  color: #fff;
 }
 
-.NavLinkMenu_settingsContainer_darkTheme_icon {
+.NavLinkMenu__settingsContainer_btn img{
   margin-right: 8px;
 }
 
-.NavLinkMenu_settingsContainer_darkTheme_toggle{
-  margin-left: 20px;
-}
-
-.NavLinkMenu_settingsContainer_darkTheme_toggle .toggle-switch-label{
-background-color: white;
-}
-.NavLinkMenu_settingsContainer_darkTheme_toggle .toggle-switch-switch {
-background-color: black;
-}
-.NavLinkMenu_settingsContainer_darkTheme_toggle .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
-  background-color: rgb(0, 0, 0);
-  transform: translateX(100%);
-}

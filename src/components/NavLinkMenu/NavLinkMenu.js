@@ -1,21 +1,22 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { NavLink,useNavigate } from "react-router-dom";
 import "./NavLinkMenu.css";
 import MainLogo from "../../images/mainLogo.svg";
-import MarkedLogo from "../../images/markedLogo.svg";
+import MarkedLogo from "../../images/ost.svg";
 import ReportLogo from "../../images/reportLogo.svg";
 import StaffLogo from "../../images/staffLogo.svg";
 import AddUser from '../../images/addUser.svg';
 import MainLogoActive from "../../images/mainLogoWhite.svg";
-import MarkedLogoActive from "../../images/markedLogoWhite.svg";
+import MarkedLogoActive from "../../images/ostWhite.svg";
 import ReportLogoActive from "../../images/reportLogoWhite.svg";
 import StaffLogoActive from "../../images/staffLogoWhite.svg";
 import LogoWhite from '../../images/logoWhite.svg';
 import AddUserWhite from '../../images/addUserWhite.svg';
 import DarkLightWhite from '../../images/darkLightWhite.svg';
+import Out from '../../images/out.svg';
 
 function NavLinkMenu() {
+    const navigate = useNavigate();
     return (
         <div className="NavLinkMenu">
             <div className="NavLinkMenu__logoContainer">
@@ -86,7 +87,7 @@ function NavLinkMenu() {
                             className="NavLinkMenu_link_img NavLinkMenu_link_img_active"
                             alt="Main Logo Active"
                         />
-                        Помеченные
+                        Остатки
                     </NavLink>
                 </nav>
             </div>
@@ -112,16 +113,7 @@ function NavLinkMenu() {
                 </nav>
             </div>
             <div className="NavLinkMenu__settingsContainer">
-                <p className="NavLinkMenu__settingsContainer_title">user_admin</p>
-                <p className="NavLinkMenu_settingsContainer_darkTheme">
-                    <span className="NavLinkMenu_settingsContainer_darkTheme_icon">
-                        <img src={DarkLightWhite} />
-                    </span>
-                    Темный режим{" "}
-                    <span className="NavLinkMenu_settingsContainer_darkTheme_toggle">
-                        <ToggleSwitch></ToggleSwitch>
-                    </span>
-                </p>
+                 <button className="NavLinkMenu__settingsContainer_btn" onClick={() => navigate('/')}><img src={Out}/>Завершить сеанс</button>
             </div>
         </div>
     );

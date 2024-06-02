@@ -1,6 +1,8 @@
 .loginBody {
   overflow: hidden;
   width: 100%;
+  height: 100vh;
+  position: relative;
 }
 
 .loginBody__img {
@@ -8,17 +10,16 @@
   z-index: 0;
   bottom: 0;
   left: 0;
-  height: 76%;
-  width: 100%;
-  object-fit: cover;
+  height: 37.41%; /* 404px от 1080px */
+  width: 165.73%; /* 3182px от 1920px */
 }
 
 .loginPopup {
-  padding-bottom: 10px;
   text-align: left;
   border-radius: 40px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-  width: 54.1%;
+  width: 54.0625%;
+  height: 53.7962%;
   background: white;
   position: fixed; /* или absolute, в зависимости от контекста */
   top: 50%;
@@ -27,38 +28,35 @@
 }
 
 .loginPopup__img {
-  margin-left: 4%;
-  margin-bottom: 0;
-  width: 13%;
-  height: 5%;
-  margin-top: 8%;
+  margin-left: 4.81696%;
+  margin-top: 10.67126%;
+  height: 3.09811%;
+  width: 13.68015%;
 }
 
 .loginPopup__container {
   display: flex;
-  margin-left: 4%;
-  margin-top: 15%;
+  margin-left: 4.81696%;
+  margin-top: 16.33391%;
+  height: 19.44923%;
+  width: 90.36609%;
   align-items: center;
 }
 
 .loginPopup_text_title {
-  font-family: "Inter", Arial, sans-serif;
-  font-style: normal;
   font-weight: 600;
-  font-size: 3vw;
-  line-height: 3.5vw;
+  font-size: clamp(0.3125rem, -0.0926rem + 2.1605vw, 2.5rem);
+  color: #000;
   margin-top: 0;
   margin-bottom: 0;
   white-space: nowrap;
 }
 
 .loginPopup_text_subtitle {
-  font-family: "Inter", Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1vw;
-  line-height: 1.5vw;
-  margin-top: 6px;
+  font-weight: 400;
+  font-size: clamp(0.3125rem, 0.1389rem + 0.9259vw, 1.25rem);
+  color: #000;
+  margin-top: 1%;
   margin-bottom: 0;
   white-space: nowrap;
 }
@@ -69,93 +67,63 @@
 }
 
 .input {
-  margin-right: 50px;
-  width: 80%;
-  background: transparent;
-  font-family: "Inter", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.04166667vw;
-  line-height: 20px;
-  text-align: left;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #d9d9d9;
-  padding: 0 0 1.5% 0;
+  font-weight: 500;
+  font-size: clamp(0.3125rem, 0.1389rem + 0.9259vw, 1.25rem);
+  color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  padding-left: 2.36967%;
+  padding-bottom: 1.7%;
+  box-sizing: border-box;
+  position: relative; /* Для позиционирования псевдоэлемента */
+}
+
+.input::placeholder {
   color: rgba(0, 0, 0, 0.2);
 }
 
-.loginPopup_inputs_password {
-  margin-top: 15%;
+.input:focus {
+  color: #000000;
+  border-bottom: 2px solid #000000;
 }
 
-.loginPopup__containerBtn {
-  display: flex;
-  margin-top: 15%;
-  margin-bottom: 8%;
-  margin-left: 4%;
+.input:focus::placeholder {
+  color: #000000;
+}
+
+.input:focus::after {
+  background: #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.loginPopup_inputs_password {
+  margin-top: 9.0531%;
 }
 
 .loginPopup__btn {
-  display: flex;
-  margin-right: 50px;
-  width: 21%;
-  height: 7%;
-  font-family: "Inter", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.04vw;
-  line-height: 20px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  background-repeat: no-repeat;
-  border: none;
-  outline: none;
-  right: 0;
   cursor: pointer;
-  border-radius: 48px;
   position: absolute;
-  color: white;
-}
-
-.loginPopup_btn_img {
-  display: block;
-  padding: 0;
-  margin: 0;
-  width: 7.798%;
-  height: 35.556%;
-  text-align: center;
-  margin-left: 15px;
-}
-.loginPopup_btn_image {
-  display: block;
-  margin: 0;
-  padding: 0;
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-}
-.loginPopup__darkTheme {
-  font-family: "Inter", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.88vw;
-  line-height: 20px;
-  margin: 0;
+  border-radius: 57px;
+  width: 20.71291%;
+  height: 7.40103%;
+  background: #000;
+  right: 4.4316%;
+  bottom: 9.29432%;
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.loginPopup__btn span{
+  font-weight: 700;
+  font-size: clamp(0.3125rem, 0.1389rem + 0.9259vw, 1.25rem);
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.loginPopup__btn img{
   position: absolute;
-  text-align: center;
-}
-
-.loginPopup_darkTheme_toggle {
-  margin-left: 32px;
-}
-
-.loginPopup_darkTheme_icon {
-  width: 68.4%;
-  height: 43.65%;
-  margin-right: 8px;
+  right: 12.093023255813953488372%;
 }
