@@ -5,7 +5,7 @@ import { users } from "../initialCard";
 
 function Staff() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
   const tableContainerRef = useRef(null);
 
   // Вычисление индексов для текущей страницы
@@ -79,7 +79,7 @@ function Staff() {
           </table>
           <div className="pagination">
             <button onClick={handlePrevPage} disabled={currentPage === 1}>
-              Предыдущая
+            {`<`}
             </button>
             {pageNumbers.map((number) => (
               <button
@@ -91,7 +91,7 @@ function Staff() {
               </button>
             ))}
             <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-              Следующая
+              {`>`}
             </button>
           </div>
         </div>

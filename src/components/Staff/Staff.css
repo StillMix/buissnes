@@ -1,97 +1,131 @@
-html, body, #root {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .staffBody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 84.1667%;
-    margin-left: 15.8333%;
-  }
-  
-  .staff {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  .staff__tableContainer {
-    height: 90%; /* Высота контейнера таблицы 90% */
-    width: 100%;
-    overflow: hidden; /* Скрытие переполнения */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .staff__containersTable {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .staff__containersTitle {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #2e2e30;
-    text-align: center;
-    margin-top: 25.36px;
-    margin-bottom: 15.64px;
-  }
-  
-  .staff__containersElements {
-    border-bottom: 1px solid #eee;
-  }
-  
-  .staff__containersElementsP {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    color: #b5b7c0;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th.staff__containersElementsP {
-    background-color: #f4f4f4;
-    color: #000;
-  }
-  
-  td.staff__containersElementsP {
-    color: #333;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .pagination button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 5px;
-  }
-  
-  .pagination button:disabled {
-    background-color: #cccccc;
-  }
-  
-  .pagination button.active {
-    background-color: #0056b3;
-  }
-  
-  .pagination span {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  
+.staffBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84.1667%;
+  margin-left: 15.8333%;
+}
+
+.staff {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.staff__tableContainer {
+  height: 90%; /* Высота контейнера таблицы 90% */
+  width: 100%;
+  overflow: hidden; /* Скрытие переполнения */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.staff__containersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff__containersTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2e2e30;
+  text-align: center;
+  margin-top: 25.36px;
+  margin-bottom: 15.64px;
+}
+
+.staff__containersElements {
+  border-bottom: 1px solid #eee;
+}
+
+.staff__containersElementsP {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #b5b7c0;
+  padding: 8px;
+  text-align: left;
+}
+
+th.staff__containersElementsP {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+td.staff__containersElementsP {
+  color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.pagination button {
+  background-color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination button:first-of-type {
+  background-color: transparent;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.pagination button:last-of-type {
+  background-color: transparent;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.pagination button:disabled {
+  display: none;
+  opacity: 0;
+}
+
+.pagination button.active {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+}
+
+.pagination span {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pagination_prevf {
+  background-color: transparent;
+}
