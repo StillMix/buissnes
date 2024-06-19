@@ -1,102 +1,55 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./Report.css";
 import NavLinkMenu from "../NavLinkMenu/NavLinkMenu";
 import { tovar } from "../initialCard";
-
+import UserSlider from "../UserSlider/UserSlider";
 function Report() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(20);
-  const tableContainerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 12; // Количество элементов на странице
 
-  // Вычисление индексов для текущей страницы
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentUsers = tovar.slice(indexOfFirstItem, indexOfLastItem);
-
-  const totalPages = Math.ceil(tovar.length / itemsPerPage);
-
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0
+        ? Math.max(0, tovar.length - itemsPerPage)
+        : prevIndex - itemsPerPage
+    );
   };
 
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + itemsPerPage >= tovar.length ? 0 : prevIndex + itemsPerPage
+    );
   };
 
-  const handlePageClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  useEffect(() => {
-    const calculateItemsPerPage = () => {
-      if (tableContainerRef.current) {
-        const tableHeight = tableContainerRef.current.clientHeight; // Высота контейнера таблицы
-        const rowHeight = 50; // Высота строки
-        const captionHeight = 50; // Высота заголовка таблицы
-        const calculatedItemsPerPage = Math.floor((tableHeight - captionHeight) / rowHeight);
-        setItemsPerPage(calculatedItemsPerPage);
-      }
-    };
-
-    calculateItemsPerPage();
-    window.addEventListener("resize", calculateItemsPerPage);
-    return () => window.removeEventListener("resize", calculateItemsPerPage);
-  }, []);
-
-  // Генерация номеров страниц
-  const pageNumbers = [];
-  for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
-    pageNumbers.push(i);
-  }
+  const visibleUsers = tovar.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
     <div className="reportBody">
       <NavLinkMenu />
       <div className="report">
-        <div ref={tableContainerRef} className="report__tableContainer">
-          <table className="report__containersTable">
-            <caption className="report__containersTitle">
-              Список сотрудников
-            </caption>
-            <thead>
-              <tr className="report__containersElements">
-                <th className="report__containersElementsP">Дата</th>
-                <th className="report__containersElementsP">Наименование</th>
-                <th className="report__containersElementsP">Точка</th>
-                <th className="report__containersElementsP">Прибыль</th>
-              </tr>
-            </thead>
-            <tbody key={currentPage} className="table_1">
-              {currentUsers.map((i) => (
-                <tr key={i.id} className="report__containersElements">
-                  <td className="report__containersElementsP">{i.data}</td>
-                  <td className="report__containersElementsP">{i.name}</td>
-                  <td className="report__containersElementsP">{i.tochka}</td>
-                  <td className="report__containersElementsP">{i.prib}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="pagination">
-            <button onClick={handlePrevPage} disabled={currentPage === 1}>
-            {`<`}
-            </button>
-            {pageNumbers.map((number) => (
-              <button
-                key={number}
-                onClick={() => handlePageClick(number)}
-                className={currentPage === number ? "active" : ""}
-              >
-                {number}
-              </button>
-            ))}
-            <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-              {`>`}
-            </button>
+            <p className="report__container__title">Отчёты</p>
+            <div className="report__containersTableContainer">
+              <div className="report__tableTitle">
+                <p className="report__tabletitle_text">Дата продажи</p>
+                <p className="report__tabletitle_text">Наименование</p>
+                <p className="report__tabletitle_text">Количество</p>
+                <p className="report__tabletitle_text">Приход</p>
+              </div>
+              <UserSlider users={visibleUsers} ok="tovar"/>
+            </div>
+            <div className="slider-controls">
+            <button className="slider-controls__brnprevnext" disabled={Math.ceil(currentIndex / itemsPerPage) === 0} onClick={handlePrev}>&lt;</button>
+              {Math.ceil(currentIndex / itemsPerPage) !== 0 ? (
+                <span className="slider-controls__btn">{Math.ceil(currentIndex / itemsPerPage)}</span>
+              ) : null}
+              <span className="slider-controls__btn_active">{Math.ceil(currentIndex / itemsPerPage) + 1}</span>
+              {Math.ceil(currentIndex / itemsPerPage) + 2 <= Math.ceil(tovar.length / itemsPerPage) ? (
+                <span className="slider-controls__btn">{Math.ceil(currentIndex / itemsPerPage) + 2}</span>
+              ) : null}
+              <button className="slider-controls__brnprevnext" onClick={handleNext}>&gt;</button>
+            </div>
           </div>
-        </div>
       </div>
-    </div>
   );
 }
 

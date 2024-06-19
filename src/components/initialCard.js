@@ -486,9 +486,18 @@
  export const tovarsclad = [
   {
     id: 1,
-    name: "Акб",
-    kolvo: 10,
-    tochka: "OZON",
+    data: "01 января 2024",
+    name: "Шуруповёрт какой то",
+    kolvo: 15,
+    cena: 15000,
+    tochka: "ALIEXPRESS",
+    recklama: 1000,
+    log: 2000,
+    seb: 0,
+    kom: 2,
+    nalog: 7,
+    prib: 0,
+    chistprib: 0,
   },
 ];
 

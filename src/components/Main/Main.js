@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Main.css";
 import hi from "../../images/hi.svg";
 import NavLinkMenu from "../NavLinkMenu/NavLinkMenu";
 import { users, tovar } from "../initialCard";
 import { NavLink } from "react-router-dom";
+import UserSlider from "../UserSlider/UserSlider";
 function Main() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 12; // Количество элементов на странице
+
+
+  const visibleUsers = users.slice(currentIndex, currentIndex + itemsPerPage);
+  const visibleTovar = tovar.slice(currentIndex, currentIndex + itemsPerPage);
   return (
     <div className="mainBody">
       <NavLinkMenu />
@@ -14,71 +21,34 @@ function Main() {
           Добро пожаловать, user_admin!
         </p>
         <div className="main__container">
-          <div className="main__containers">
+        <div className="main__containers sotr">
+            <p className="main__container__title">Список граждан</p>
             <div className="main__containersTableContainer">
-              <table className="main__containersTable">
-                <caption className="main__containersTitle">
-                  Список сотрудников
-                </caption>
-                <thead>
-                  <tr className="main__containersElements">
-                    <th className="main__containersElementsP">ФИО</th>
-                    <th className="main__containersElementsP">
-                      Номер телефона
-                    </th>
-                    <th className="main__containersElementsP">Логин</th>
-                    <th className="main__containersElementsP">Точка</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {users.map((i) => (
-                    <tr key={i.id} className="main__containersElements">
-                      <td className="main__containersElementsP">{i.name}</td>
-                      <td className="main__containersElementsP">{i.number}</td>
-                      <td className="main__containersElementsP">{i.login}</td>
-                      <td className="main__containersElementsP">{i.tochka}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="main__tableTitle">
+                <p className="main__tabletitle_text">ФИО</p>
+                <p className="main__tabletitle_text">Номер телефона</p>
+                <p className="main__tabletitle_text">Логин</p>
+                <p className="main__tabletitle_text">Точка</p>
+              </div>
+              <UserSlider users={visibleUsers} ok="user"/>
+            </div>
+            <NavLink to="/staff" className="main__containerbtnLink">
+                Посмотреть всех сотрудников
+                </NavLink>
+          </div>
+          <div className="main__containers add">
+            <p className="main__container__title">Отчёты</p>
+            <div className="main__containersTableContainer">
+              <div className="main__tableTitle">
+                <p className="main__tabletitle_text">Дата</p>
+                <p className="main__tabletitle_text">Наименование</p>
+                <p className="main__tabletitle_text">Точка</p>
+                <p className="main__tabletitle_text">Прибыль</p>
+              </div>
+              <UserSlider users={visibleTovar} ok="tov"/>
             </div>
 
-            <div>
-              <div className="main__containerbtn">
-                <NavLink to="/staff" className="main__containerbtnLink">
-                  Посмотреть всех сотрудников
-                </NavLink>
-              </div>
-            </div>
-          </div>
-          <div className="main__containers">
-            <div className="main__containersTableContainer">
-              <table className="main__containersTable">
-                <caption className="main__containersTitle">
-                  Список сотрудников
-                </caption>
-                <thead>
-                  <tr className="main__containersElements">
-                    <th className="main__containersElementsP">Дата</th>
-                    <th className="main__containersElementsP">
-                      Наименование
-                    </th>
-                    <th className="main__containersElementsP">Точка</th>
-                    <th className="main__containersElementsP">Прибыль</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tovar.map((i) => (
-                    <tr key={i.id} className="main__containersElements">
-                      <td className="main__containersElementsP">{i.data}</td>
-                      <td className="main__containersElementsP">{i.name}</td>
-                      <td className="main__containersElementsP">{i.tochka}</td>
-                      <td className="main__containersElementsP">{i.prib}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          
 
             <div>
               <div className="main__containerbtn">
