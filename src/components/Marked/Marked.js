@@ -3,7 +3,7 @@ import "./Marked.css";
 import { tovarsclad } from "../initialCard";
 import NavLinkMenu from '../NavLinkMenu/NavLinkMenu';
 import UserSlider from "../UserSlider/UserSlider";
-function Marked() {
+function Marked(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 12; // Количество элементов на странице
 
@@ -25,7 +25,7 @@ function Marked() {
 
   return (
     <div className="markedBody">
-      <NavLinkMenu />
+      <NavLinkMenu back={props.back}/>
       <div className="marked">
       <p className="marked__container__title">Остатки</p>
             <div className="marked__containersTableContainer">

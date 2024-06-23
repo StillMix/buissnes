@@ -4,18 +4,21 @@ import "./UserSlider.css";
 const UserSlider = ({ users, ok }) => {
   return (
     <div className="user-slider">
-      {
-        ok === "user" ? (
-          users.map((user, index) => (
-            <div key={index} className="user-slider__item">
-              <p>{user.name}</p>
-              <p>{user.number}</p>
-              <p>{user.login}</p>
-              <p>{user.tochka}</p>
-            </div>
-          ))
-        ) : null
-      }
+{
+  ok === "user" ? (
+    users.map((user, index) => (
+      user.dr ? (
+        <div key={index} className="user-slider__item">
+          <p>{user.fio}</p>
+          <p>{user.number}</p>
+          <p>{user.login}</p>
+          <p>{user.tochka}</p>
+        </div>
+      ) : null
+    ))
+  ) : null
+}
+
             {
         ok === "tov" ? (
           users.map((user, index) => (

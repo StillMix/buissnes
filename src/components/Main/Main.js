@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Main.css";
 import hi from "../../images/hi.svg";
 import NavLinkMenu from "../NavLinkMenu/NavLinkMenu";
-import { users, tovar } from "../initialCard";
+import {  tovar } from "../initialCard";
 import { NavLink } from "react-router-dom";
 import UserSlider from "../UserSlider/UserSlider";
-function Main() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+function Main(props) {
+  const currentIndex = 0;
   const itemsPerPage = 12; // Количество элементов на странице
+  
 
-
-  const visibleUsers = users.slice(currentIndex, currentIndex + itemsPerPage);
+  const visibleUsers = props.card.slice(currentIndex, currentIndex + itemsPerPage);
   const visibleTovar = tovar.slice(currentIndex, currentIndex + itemsPerPage);
   return (
     <div className="mainBody">
-      <NavLinkMenu />
+      <NavLinkMenu back={props.back}/>
       <div className="main">
         <p className="main__title">
-          <img src={hi} />
+          <img src={hi} alt="sss"/>
           Добро пожаловать, user_admin!
         </p>
         <div className="main__container">
@@ -54,7 +54,7 @@ function Main() {
               <div className="main__containerbtn">
                 <NavLink to="/report" className="main__containerbtnLink">
                 Посмотреть все отчёты
-                </NavLink>
+                </NavLink >
               </div>
             </div>
           </div>

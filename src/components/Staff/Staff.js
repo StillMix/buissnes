@@ -1,32 +1,31 @@
 import React, { useState } from "react";
 import "./Staff.css";
 import NavLinkMenu from "../NavLinkMenu/NavLinkMenu";
-import { users } from "../initialCard";
 import UserSlider from "../UserSlider/UserSlider";
-function Staff() {
+function Staff(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 12; // Количество элементов на странице
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0
-        ? Math.max(0, users.length - itemsPerPage)
+        ? Math.max(0, props.card.length - itemsPerPage)
         : prevIndex - itemsPerPage
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerPage >= users.length ? 0 : prevIndex + itemsPerPage
+      prevIndex + itemsPerPage >= props.card.length ? 0 : prevIndex + itemsPerPage
     );
   };
 
-  const visibleUsers = users.slice(currentIndex, currentIndex + itemsPerPage);
+  const visibleUsers = props.card.slice(currentIndex, currentIndex + itemsPerPage);
 
 
   return (
     <div className="staffBody">
-      <NavLinkMenu />
+      <NavLinkMenu back={props.back}/>
       <div className="staff">
             <p className="staff__container__title">Список граждан</p>
             <div className="staff__containersTableContainer">
@@ -46,7 +45,7 @@ function Staff() {
                 <span className="slider-controls__btn">{Math.ceil(currentIndex / itemsPerPage)}</span>
               ) : null}
               <span className="slider-controls__btn_active">{Math.ceil(currentIndex / itemsPerPage) + 1}</span>
-              {Math.ceil(currentIndex / itemsPerPage) + 2 <= Math.ceil(users.length / itemsPerPage) ? (
+              {Math.ceil(currentIndex / itemsPerPage) + 2 <= Math.ceil(props.card.length / itemsPerPage) ? (
                 <span className="slider-controls__btn">{Math.ceil(currentIndex / itemsPerPage) + 2}</span>
               ) : null}
               <button className="slider-controls__brnprevnext" onClick={handleNext}>&gt;</button>

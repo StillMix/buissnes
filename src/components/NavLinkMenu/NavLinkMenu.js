@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import "./NavLinkMenu.css";
 import MainLogo from "../../images/mainLogo.svg";
 import MarkedLogo from "../../images/ost.svg";
@@ -12,15 +12,13 @@ import ReportLogoActive from "../../images/reportLogoWhite.svg";
 import StaffLogoActive from "../../images/staffLogoWhite.svg";
 import LogoWhite from '../../images/logoWhite.svg';
 import AddUserWhite from '../../images/addUserWhite.svg';
-import DarkLightWhite from '../../images/darkLightWhite.svg';
 import Out from '../../images/out.svg';
 
-function NavLinkMenu() {
-    const navigate = useNavigate();
+function NavLinkMenu(props) {
     return (
         <div className="NavLinkMenu">
             <div className="NavLinkMenu__logoContainer">
-                <img className="NavLinkMenu__logo" src={LogoWhite} />
+                <img className="NavLinkMenu__logo" alt="Main Logo" src={LogoWhite} />
             </div>
             <div className="NavLinkMenu__linksContainer">
                 <p className="NavLinkMenu_linksContainer_title">Меню</p>
@@ -113,7 +111,7 @@ function NavLinkMenu() {
                 </nav>
             </div>
             <div className="NavLinkMenu__settingsContainer">
-                 <button className="NavLinkMenu__settingsContainer_btn" onClick={() => navigate('/')}><img src={Out}/>Завершить сеанс</button>
+                 <button className="NavLinkMenu__settingsContainer_btn" onClick={props.back}><img  alt="Main Logo" src={Out}/>Завершить сеанс</button>
             </div>
         </div>
     );

@@ -1,12 +1,25 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+
 import "./Login.css";
 import BusImg from "../../images/bus-log.png";
 import DarkLogo from "../../images/logoDark.svg";
 import AllowRight from "../../images/arrowright.svg";
 
-function Login() {
-  const navigate = useNavigate();
+function Login(props) {
+  const [formValues, setFormValues] = useState({});
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.handleSubmit(formValues);
+  }
 
   return (
     <div className="loginBody">
@@ -20,20 +33,33 @@ function Login() {
               Пожалуйста, войдите в систему, если вы наш :)
             </p>
           </div>
+          <form onSubmit={handleSubmit}>
           <div className="loginPopup__inputs">
             <input
+              id="profile-email-input"
+              value={formValues.EmailInput}
+              onChange={handleChange}
+              name="EmailInput"
+              required
               placeholder="Логин"
               className="loginPopup_inputs_login input"
             />
             <input
+              id="profile-password-input"
+              type="password"
+              value={formValues.PasswordInput}
+              onChange={handleChange}
+              name="PasswordInput"
+              required
               placeholder="Пароль"
               className="loginPopup_inputs_password input"
             />
           </div>
-          <button className="loginPopup__btn" onClick={() => navigate('/main')}>
+          <button type="submit" className="loginPopup__btn" >
             <span>Войти</span>
             <img src={AllowRight} className="loginPopup_btn_image" alt="Arrow" />
           </button>
+          </form>
         </div>
       </div>
     </div>

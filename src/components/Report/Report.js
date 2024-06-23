@@ -3,7 +3,7 @@ import "./Report.css";
 import NavLinkMenu from "../NavLinkMenu/NavLinkMenu";
 import { tovar } from "../initialCard";
 import UserSlider from "../UserSlider/UserSlider";
-function Report() {
+function Report(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 12; // Количество элементов на странице
 
@@ -25,7 +25,7 @@ function Report() {
 
   return (
     <div className="reportBody">
-      <NavLinkMenu />
+      <NavLinkMenu back={props.back}/>
       <div className="report">
             <p className="report__container__title">Отчёты</p>
             <div className="report__containersTableContainer">
