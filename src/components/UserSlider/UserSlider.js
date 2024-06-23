@@ -4,24 +4,21 @@ import "./UserSlider.css";
 const UserSlider = ({ users, ok }) => {
   return (
     <div className="user-slider">
-{
-  ok === "user" ? (
-    users.map((user, index) => (
-      user.dr ? (
-        <div key={index} className="user-slider__item">
-          <p>{user.fio}</p>
-          <p>{user.number}</p>
-          <p>{user.login}</p>
-          <p>{user.tochka}</p>
-        </div>
-      ) : null
-    ))
-  ) : null
-}
+      {ok === "user"
+        ? users.map((user, index) =>
+            user.dr ? (
+              <div key={index} className="user-slider__item">
+                <p>{user.fio}</p>
+                <p>{user.number}</p>
+                <p>{user.login}</p>
+                <p>{user.tochka}</p>
+              </div>
+            ) : null
+          )
+        : null}
 
-            {
-        ok === "tov" ? (
-          users.map((user, index) => (
+      {ok === "tov"
+        ? users.map((user, index) => (
             <div key={index} className="user-slider__item">
               <p>{user.data}</p>
               <p>{user.name}</p>
@@ -29,25 +26,23 @@ const UserSlider = ({ users, ok }) => {
               <p>{user.prib}</p>
             </div>
           ))
-        ) : null
-      }
-                  {
-        ok === "users" ? (
-          users.map((user, index) => (
-            <div key={index} className="user-slider__item">
-              <p>{user.name}</p>
-              <p>{user.dr}</p>
-              <p>{user.number}</p>
-              <p>{user.tochka}</p>
-              <p>{user.mesto}</p>
-              <p>{user.login}</p>
-            </div>
-          ))
-        ) : null
-      }
-                        {
-        ok === "tovar" ? (
-          users.map((user, index) => (
+        : null}
+      {ok === "users"
+        ? users.map((user, index) =>
+            user.dr ? (
+              <div key={index} className="user-slider__item">
+                <p>{user.fio}</p>
+                <p>{user.dr}</p>
+                <p>{user.number}</p>
+                <p>{user.tochka}</p>
+                <p>{user.mesto}</p>
+                <p>{user.login}</p>
+              </div>
+            ) : null
+          )
+        : null}
+      {ok === "tovar"
+        ? users.map((user, index) => (
             <div key={index} className="user-slider__item">
               <p>{user.data}</p>
               <p>{user.name}</p>
@@ -55,11 +50,9 @@ const UserSlider = ({ users, ok }) => {
               <p>{user.prib}</p>
             </div>
           ))
-        ) : null
-      }
-                              {
-        ok === "marked" ? (
-          users.map((user, index) => (
+        : null}
+      {ok === "marked"
+        ? users.map((user, index) => (
             <div key={index} className="user-slider__item">
               <p>{user.name}</p>
               <p>{user.tochka}</p>
@@ -68,8 +61,7 @@ const UserSlider = ({ users, ok }) => {
               <p>{user.nalog}</p>
             </div>
           ))
-        ) : null
-      }
+        : null}
     </div>
   );
 };
